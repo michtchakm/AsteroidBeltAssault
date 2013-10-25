@@ -1,6 +1,6 @@
 using System;
 
-namespace AsteroidBeltAssault
+namespace Asteroid_Belt_Assault
 {
 #if WINDOWS || XBOX
     static class Program
