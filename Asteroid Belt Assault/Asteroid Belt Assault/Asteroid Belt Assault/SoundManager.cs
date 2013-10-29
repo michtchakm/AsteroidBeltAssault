@@ -18,7 +18,10 @@ namespace Asteroid_Belt_Assault
 
         private static SoundEffect playerShot;
         private static SoundEffect enemyShot;
+        private static SoundEffect spaceballs;
 
+        SoundEffectInstance instance = spaceballs.CreateInstance();
+        spaceballs.IsLooped = true;
         private static Random rand = new Random();
 
         public static void Initialize(ContentManager content)
@@ -27,6 +30,7 @@ namespace Asteroid_Belt_Assault
             {
                 playerShot = content.Load<SoundEffect>(@"Sounds\Shot1");
                 enemyShot = content.Load<SoundEffect>(@"Sounds\Shot2");
+                spaceballs = content.Load<SoundEffect>(@"Sounds/spaceballs");
 
                 for (int x = 1; x <= explosionCount; x++)
                 {
@@ -74,6 +78,18 @@ namespace Asteroid_Belt_Assault
             catch
             {
                 Debug.Write("PlayEnemyShot Failed");
+            }
+        }
+
+        public static void PlaySpaceballs()
+        {
+            try
+            {
+                spaceballs.Play();
+            }
+            catch
+            {
+                Debug.Write("PlaySpaceballs Failed");
             }
         }
 
